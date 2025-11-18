@@ -1,0 +1,13 @@
+📂 retailagentix
+ ├─ main.py                 ← enhanced entry point (still 100 % Streamlit)
+ ├─ styles/
+ │   └─ main.css            ← every original inline rule + new palette vars
+ ├─ i18n/
+ │   ├─ ui_text.json        ← every label / button / title
+ │   └─ formats.py          ← tz, currency, date, unit helpers
+ ├─ components/
+ │   ├─ settings_dialog.py  ⚙️  pop-over
+ │   └─ theme_manager.py    light/dark + palette switcher
+ ├─ utils/
+ │   └─ css_loader.py       cache-busted css injection
+ └─ requirements.txt        (unchanged)

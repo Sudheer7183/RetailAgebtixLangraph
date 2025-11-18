@@ -1,0 +1,9 @@
+env\
+retailaagetix_mvp-main/.langgraph_api/
+retailaagetix_mvp-main/.langgraph_api/.langgraph_checkpoint.1.pckl
+retailaagetix_mvp-main/.langgraph_api/.langgraph_checkpoint.2.pckl
+retailaagetix_mvp-main/.langgraph_api/.langgraph_checkpoint.3.pckl
+retailaagetix_mvp-main/.langgraph_api/.langgraph_ops.pckl
+retailaagetix_mvp-main/.langgraph_api/.langgraph_retry_counter.pckl
+retailaagetix_mvp-main/.langgraph_api/store.pckl
+retailaagetix_mvp-main/.langgraph_api/store.vectors.pckl

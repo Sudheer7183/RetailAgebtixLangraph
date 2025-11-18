@@ -1,0 +1,6 @@
+sku_id,sku_name,category,unit_of_measure,regular_price_usd,promo_price_usd,expiry_days,price_updated_timestamp,currency
+2000,WholeWheat_Bread,Bakery,each,2.53,2.53,4,2025-10-15T10:10:18Z,USD
+2001,Croissant_Butter,Bakery,each,3.88,3.45,3,2025-10-15T10:10:18Z,USD
+2002,Donut_Glazed,Bakery,each,1.78,1.78,2,2025-10-15T10:10:18Z,USD
+2003,Muffin_Blueberry,Bakery,each,3.05,3.05,5,2025-10-15T10:10:18Z,USD
+2004,Bagel_Plain,Bakery,each,2.49,2.49,4,2025-10-15T10:10:18Z,USD

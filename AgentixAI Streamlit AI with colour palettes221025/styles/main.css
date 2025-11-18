@@ -1,0 +1,200 @@
+/* ============== ROOT DESIGN TOKENS ============== */
+:root[data-palette="blue"]   { --grad-start:#1a42f8; --grad-end:#4ba29c; --accent:#3b82f6; --accent-dark:#2563eb; }
+:root[data-palette="green"]  { --grad-start:#10b981; --grad-end:#34d399; --accent:#10b981; --accent-dark:#059669; }
+:root[data-palette="orange"] { --grad-start:#f59e0b; --grad-end:#fbbf24; --accent:#f59e0b; --accent-dark:#d97706; }
+:root[data-palette="slate"]  { --grad-start:#475569; --grad-end:#94a3b8; --accent:#475569; --accent-dark:#334155; }
+
+:root[data-theme="light"]{ --bg:#f8fafc; --card:#ffffff; --text:#1f2937; --border:#e5e7eb; --soft:#f1f5f9; }
+:root[data-theme="dark"] { --bg:#0f172a; --card:#1e293b; --text:#e2e8f0; --border:#334155; --soft:#1e293b;}
+
+/* ============== GLOBAL RESET ============== */
+* { box-sizing:border-box; }
+html, body, .main {
+    background:var(--bg) !important;
+    color:var(--text) !important;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin:0; padding:0;
+}
+/* let Streamlit rows breathe */
+.st-emotion-cache-1wmy9hl{ gap:1rem !important; }   /* row gap */
+.st-emotion-cache-1vze6nh{ padding:0.75rem 0 !important; } /* column padding */
+
+/* ============== BUTTONS ============== */
+/* use variables everywhere */
+.stButton > button,
+section[data-testid="stSidebar"] button[kind="primary"],
+section[data-testid="stSidebar"] [data-baseweb="button"] {
+    background: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: #fff !important;
+}
+.stButton > button:hover,
+section[data-testid="stSidebar"] button[kind="primary"]:hover,
+section[data-testid="stSidebar"] [data-baseweb="button"]:hover {
+    background: var(--accent-dark) !important;
+    border-color: var(--accent-dark) !important;
+}
+
+/* metric-card already uses gradient – no change needed */
+/* subsection underline */
+.subsection-header {
+    border-bottom-color: var(--accent);
+}
+/* hyper-links, expanders, tabs, toggles… */
+.st-dk, .st-eb, a, .st-bb,
+[data-testid="stRadio"] label:has(input:checked),
+[data-testid="stSelectbox"] svg {
+    color: var(--accent) !important;
+}
+/* selected tab */
+.stTabs [data-baseweb="tab"][aria-selected="true"] {
+    background-color: var(--accent) !important;
+    color: #fff !important;
+}
+.stTabs [role="tablist"]::after {
+    background: linear-gradient(90deg, var(--grad-start) 0%, var(--grad-end) 100%) !important;
+}
+
+
+
+/* ============== METRIC / CARDS ============== */
+.metric-card, .data-card, .agent-summary {
+    border-radius:16px;
+    padding:1.25rem;
+    margin:0 0 1rem 0;
+    box-shadow:0 8px 32px rgba(0,0,0,.1);
+    border:1px solid var(--border);
+}
+.metric-card {
+    background:linear-gradient(135deg, var(--grad-start) 0%, var(--grad-end) 100%);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    min-height:100px;
+}
+.data-card, .agent-summary {
+    background:var(--card);
+}
+.agent-summary {
+    text-align:center;
+    font-size:0.9rem;
+}
+
+/* -------------- SECTION HEADERS -------------- */
+.section-header {
+    background:linear-gradient(135deg, var(--grad-start) 0%, var(--grad-end) 100%);
+    color:white;
+    font-size:1.5rem;
+    font-weight:700;
+    margin:1.5rem 0 1rem 0;
+    padding:1rem 1.5rem;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 4px 6px -1px rgba(0,0,0,.1);
+}
+.subsection-header {
+    color:var(--text);
+    font-size:1.25rem;
+    font-weight:600;
+    margin:1rem 0 .75rem 0;
+    padding:.75rem 0;
+    border-bottom:3px solid var(--accent);
+    display:flex;
+    align-items:center;
+}
+
+/* -------------- STATUS BADGES -------------- */
+.status-badge-success,
+.status-badge-warning,
+.status-badge-error {
+    padding:.35rem .75rem;
+    border-radius:20px;
+    font-size:.75rem;
+    font-weight:600;
+    color:#fff;
+}
+.status-badge-success { background:#10b981; }
+.status-badge-warning { background:#f59e0b; }
+.status-badge-error   { background:#ef4444; }
+
+/* -------------- TABLE WRAPPER -------------- */
+.highlight-table {
+    background:var(--soft);
+    border-radius:12px;
+    padding:1rem;
+    margin:.75rem 0;
+    overflow-x:auto;               /* horizontal scroll on tiny screens */
+}
+
+/* -------------- SETTINGS GEAR -------------- */
+.settings-gear {
+    position:fixed;
+    top:12px;
+    right:24px;
+    z-index:999;
+    background:var(--accent);
+    color:white;
+    border:none;
+    border-radius:50%;
+    width:44px;
+    height:44px;
+    font-size:22px;
+    cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,0,0,.25);
+    transition:transform .2s;
+}
+.settings-gear:hover { transform:rotate(30deg); }
+
+/* =====================================================
+   RESPONSIVE TWEAKS – keep Streamlit native behaviour
+   ===================================================== */
+/* ≤ 768 px (phones) */
+@media (max-width: 100%) {
+    .section-header { font-size:1.25rem; padding:.75rem 1rem; }
+    .subsection-header { font-size:1.1rem; }
+    .stButton > button { font-size:.95rem; }
+    /* let single-column expand full-width */
+    [data-testid="column"] { width:100% !important; flex:1 1 100% !important; }
+    /* remove huge lateral padding on mobile */
+    .main .block-container { padding-left:1rem !important; padding-right:1rem !important; }
+}
+
+/* 769-1024 px (small tablets) */
+@media (min-width: 100%) and (max-width: 1024px) {
+    .section-header { font-size:1.35rem; }
+    .subsection-header { font-size:1.15rem; }
+}
+
+.exec-band {
+    background: linear-gradient(135deg, var(--grad-start) 0%, var(--grad-end) 100%);
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 -2rem 0 -2rem;
+    padding: 1rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1);
+}
+@media (max-width: 768px) {
+    .exec-band { font-size: 1.25rem; padding: .75rem 1rem; margin: 0 -1rem 0 -1rem; }
+}
+
+/* 5-colour rainbow strip */
+.exec-rainbow {
+    height: 15px;
+    margin: -1rem -2rem 1.5rem -2rem;
+    display: flex;
+}
+.exec-rainbow span {
+    flex: 1 1 20%;
+}
+.exec-rainbow span:nth-child(1) { background: var(--grad-start); }
+.exec-rainbow span:nth-child(2) { background: color-mix(in srgb, var(--grad-start) 75%, var(--grad-end)); }
+.exec-rainbow span:nth-child(3) { background: color-mix(in srgb, var(--grad-start) 50%, var(--grad-end)); }
+.exec-rainbow span:nth-child(4) { background: color-mix(in srgb, var(--grad-start) 25%, var(--grad-end)); }
+.exec-rainbow span:nth-child(5) { background: var(--grad-end); }
+@media (max-width: 768px) {
+    .exec-rainbow { margin: -1rem -1rem 1rem -1rem; }
+}
+

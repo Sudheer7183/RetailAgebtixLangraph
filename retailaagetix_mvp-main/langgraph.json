@@ -1,0 +1,7 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "agent": "./agui_connector.py:app_graph"
+  },
+  "env": ".env"
+}

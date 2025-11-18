@@ -1,0 +1,4 @@
+hour,footfall_count,historical_baseline,footfall_index,status
+8,55,380.0,0.145,Below Avg
+9,80,380.0,0.211,Below Avg
+10,60,380.0,0.158,Below Avg

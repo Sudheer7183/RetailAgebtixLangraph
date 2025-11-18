@@ -1,0 +1,6 @@
+sku_id,sku_name,category,total_units,fresh_units,stale_units,spoiled_units,expiry_days,location,avg_price
+2000,WholeWheat_Bread,Bakery,172,120,34,18,1,Bakery Section,2.53
+2001,Croissant_Butter,Bakery,0,0,0,0,3,Bakery Section,3.88
+2002,Donut_Glazed,Bakery,66,46,13,7,2,Bakery Section,1.78
+2003,Muffin_Blueberry,Bakery,0,0,0,0,5,Bakery Section,3.05
+2004,Bagel_Plain,Bakery,64,44,12,8,4,Bakery Section,2.49
