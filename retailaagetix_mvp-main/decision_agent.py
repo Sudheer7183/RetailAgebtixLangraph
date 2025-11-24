@@ -22,7 +22,7 @@ class DecisionAgent:
     def call_ollama_safe(self, prompt, max_tokens=200):
         url = "https://api.groq.com/openai/v1/chat/completions"
         headers = {
-            "Authorization": "Bearer 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",
+            "Authorization": "Bearer ************************",
             "Content-Type": "application/json"
         }
         body = {
