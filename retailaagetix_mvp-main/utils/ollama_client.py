@@ -31,8 +31,8 @@ def call_ollama(prompt: str, max_tokens: int = 512, stream: bool = False) -> Dic
     #                     "stream": False
     #                 }
     #             )
-    # api_key="AIzaSyCgA0OLuMrqXUvaM3pXBl-ohTe0j5pqahQ"
-    api_key="AIzaSyB0dexOy6Vmi3cU_490RwddvFJr8XITUaA"
+
+    api_key="********************"
     model_name="gemini-2.0-flash"
     url=f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
 
